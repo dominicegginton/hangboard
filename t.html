@@ -1,0 +1,18 @@
+<uiView>
+  <div id="suuntoplus">
+    <!-- State -->
+    <div class="sp-d-m p-hc" style="position:absolute; top:20%">
+      <eval input="Zapp/{zapp_index}/Output/state" outputFormat="keyValue 0=READY|1=HANG|2=REST|3=SET REST|4=DONE" default="--" />
+    </div>
+
+    <!-- Timer -->
+    <div class="sp-d-xxl f-num p-hc" style="position:absolute; top:32%; width:100%; text-align:center;">
+      <eval input="Zapp/{zapp_index}/Output/timer" outputFormat="Count_Threedigits" default="0" />
+    </div>
+
+    <!-- Progress: Rep/Total - Set/Total (e.g. 3/4-5/6) -->
+    <div class="sp-d-xs f-num p-hc" style="position:absolute; top:80%">
+      <eval input="Zapp/{zapp_index}/Output/rep" outputFormat="Count_Twodigits" default="1" />/<eval input="Zapp/{zapp_index}/Output/totalReps" outputFormat="Count_Twodigits" default="1" />-<eval input="Zapp/{zapp_index}/Output/set" outputFormat="Count_Twodigits" default="1" /><:if test="Zapp/{zapp_index}/Output/totalSets > 0">/<eval input="Zapp/{zapp_index}/Output/totalSets" outputFormat="Count_Twodigits" default="1" /></:if>
+    </div>
+  </div>
+</uiView>

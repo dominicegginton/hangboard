@@ -1,0 +1,27 @@
+{
+  "name": "Hangboarding",
+  "version": "1.0",
+  "author": "Dominic Egginton",
+  "description": "Dedicated hangboarding app with customizable timers.",
+  "type": "feature",
+  "usage": "workout",
+  "modificationTime": 1717920000,
+  "in": [{ "name": "duration", "source": "Activity/Move/-1/Duration/Current", "type": "subscribe" }],
+  "out": [
+    { "name": "state" },
+    { "name": "timer" },
+    { "name": "rep" },
+    { "name": "totalReps" },
+    { "name": "set" },
+    { "name": "totalSets" },
+    { "name": "completedHangs" }
+  ],
+  "settings": [
+    { "shownName": "Work [s]", "path": "workTime", "type": "int", "min": 1, "max": 60, "inputType": "slider" },
+    { "shownName": "Rest [s]", "path": "restTime", "type": "int", "min": 1, "max": 60, "inputType": "slider" },
+    { "shownName": "Reps", "path": "reps", "type": "int", "min": 1, "max": 20 },
+    { "shownName": "Set Rest [s]", "path": "setRestTime", "type": "int", "min": 10, "max": 600 },
+    { "shownName": "Sets", "path": "sets", "type": "int", "min": 0, "max": 20 }
+  ],
+  "template": [{ "name": "t.html" }]
+}
